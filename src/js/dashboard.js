@@ -14,11 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (btnStartQuest) {
     btnStartQuest.addEventListener('click', () => {
-      const modalEl = document.getElementById('questModal');
-      if (modalEl && window.bootstrap) {
-        questModalInstance = new window.bootstrap.Modal(modalEl);
-        questModalInstance.show();
-      }
+      window.location.href = '/quest.html';
     });
   }
 

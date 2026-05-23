@@ -11,6 +11,7 @@ export default defineConfig({
         journey: resolve(__dirname, 'journey.html'),
         messages: resolve(__dirname, 'messages.html'),
         profile: resolve(__dirname, 'profile.html'),
+        quest: resolve(__dirname, 'quest.html'),
       },
     },
   },

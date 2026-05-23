@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/src/assets/icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReadBloom - Reading Quest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@400..700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/src/css/quest.css">
+</head>
+
+<body>
+
+  <!-- ===== STEP 1: CAMERA CHECK ===== -->
+  <div id="step-camera" class="quest-step active">
+    <div class="quest-bg">
+      <div class="camera-check-wrapper">
+        <div class="camera-box-container">
+          <video id="camera-preview" autoplay playsinline muted></video>
+          <div class="camera-frame"></div>
+          <div class="mic-bar-row" id="mic-bars">
+            <span class="mic-icon">🎤</span>
+            <div class="mic-bar" style="height:20px"></div>
+            <div class="mic-bar" style="height:30px"></div>
+            <div class="mic-bar" style="height:40px"></div>
+            <div class="mic-bar" style="height:50px"></div>
+            <div class="mic-bar" style="height:40px"></div>
+            <div class="mic-bar mic-bar-green" style="height:35px"></div>
+            <div class="mic-bar mic-bar-green" style="height:28px"></div>
+            <div class="mic-bar mic-bar-green" style="height:22px"></div>
+            <div class="mic-bar mic-bar-green" style="height:18px"></div>
+          </div>
+        </div>
+        <div class="camera-controls">
+          <button class="btn-start" id="btn-camera-start">
+            <span class="start-arrow">▶</span> START
+          </button>
+          <div class="time-hint"><strong>3 minutes</strong> to read</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== STEP 2: READING PASSAGE ===== -->
+  <div id="step-reading" class="quest-step">
+    <div class="quest-bg reading-bg">
+      <div class="reading-layout">
+        <!-- Left: Camera feed -->
+        <div class="reading-camera-col">
+          <div class="reading-cam-frame">
+            <video id="reading-camera" autoplay playsinline muted></video>
+          </div>
+        </div>
+
+        <!-- Right: Passage card -->
+        <div class="reading-content-col">
+          <!-- Tabs -->
+          <div class="reading-tabs">
+            <div class="tab-item active">Read Aloud</div>
+            <div class="tab-item recording-tab">
+              <span class="rec-dot"></span> Recording
+            </div>
+          </div>
+
+          <!-- Passage -->
+          <div class="passage-card">
+            <h2 class="passage-title">THE TWO BEST FRIENDS</h2>
+            <p>Once there were two friends a squirrel and a puppy. They used to live and play together. The squirrel was very sporty and always won the game. The puppy used to feel bad and thought that it was of no use.</p>
+            <p>One day, it started raining heavily. The squirrel was in high spirits. He started doing antics but suddenly, lost his balance and fell in the rain water.</p>
+            <p>He called his friend, the puppy for help. The puppy came to his rescue. The squirrel climbed on its back and reached a safe place. He thanked his friend for saving his life.</p>
+          </div>
+
+          <!-- Done button -->
+          <div class="text-center mt-3">
+            <button class="btn-done" id="btn-reading-done">I'm Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== STEP 3: VIDEO PREVIEW ===== -->
+  <div id="step-preview" class="quest-step">
+    <header class="quest-header">
+      <img src="/src/assets/logo.png" alt="ReadBloom Logo" class="header-logo">
+      <span class="header-tag">STUDENT PORTAL</span>
+    </header>
+    <div class="quest-bg preview-bg">
+      <div class="preview-wrapper">
+        <h2 class="preview-title">Preview your Video</h2>
+        <div class="preview-cam-frame">
+          <video id="preview-video" autoplay playsinline muted></video>
+        </div>
+        <div class="preview-actions">
+          <button class="btn-start-over" id="btn-start-over">↺ Start Over</button>
+          <button class="btn-im-done" id="btn-im-done">✓ I'm Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== UPLOAD MODAL ===== -->
+  <div id="upload-modal" class="upload-modal-overlay hidden">
+    <div class="upload-modal-box">
+      <div class="upload-icon">⬆</div>
+      <h3>Upload your reading?</h3>
+      <p>Your video will be submitted to your teacher.</p>
+      <div class="upload-modal-actions">
+        <button class="btn-upload-cancel" id="btn-upload-cancel">Cancel</button>
+        <button class="btn-upload-confirm" id="btn-upload-confirm">Upload</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== STEP 4: QUIZ ===== -->
+  <div id="step-quiz" class="quest-step">
+    <header class="quest-header">
+      <img src="/src/assets/logo.png" alt="ReadBloom Logo" class="header-logo">
+      <span class="header-tag">STUDENT PORTAL</span>
+    </header>
+    <div class="quest-bg quiz-bg">
+      <div class="quiz-wrapper">
+        <!-- Progress dots -->
+        <div class="quiz-progress-row">
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+          </div>
+          <div class="quiz-dots" id="quiz-dots"></div>
+          <div class="quiz-exercise-label" id="quiz-exercise-label">EXERCISE 1</div>
+        </div>
+
+        <!-- Question -->
+        <div class="quiz-question-text" id="quiz-question"></div>
+
+        <!-- Choices -->
+        <div class="quiz-choices" id="quiz-choices"></div>
+
+        <!-- Next -->
+        <div class="text-center mt-4">
+          <button class="btn-quiz-next" id="btn-quiz-next">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== STEP 5: DONE ===== -->
+  <div id="step-done" class="quest-step">
+    <header class="quest-header">
+      <img src="/src/assets/logo.png" alt="ReadBloom Logo" class="header-logo">
+      <span class="header-tag">STUDENT PORTAL</span>
+    </header>
+    <div class="quest-bg done-bg">
+      <div class="done-wrapper">
+        <div class="done-star">⭐</div>
+        <h2 class="done-title">Great Job!</h2>
+        <p class="done-subtitle">You finished reading <strong>The Two Best Friends</strong> and answered all the questions!</p>
+        <div class="done-score-box">
+          <span class="done-score" id="done-score">3/3</span>
+          <span class="done-score-label">Correct</span>
+        </div>
+        <div class="done-actions">
+          <button class="btn-start-over-done" id="btn-restart">↺ Start Over</button>
+          <button class="btn-turn-in" id="btn-turn-in">Turn It In 🚀</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="/src/js/quest.js"></script>
+</body>
+</html>
