@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link class="page-icon" rel="icon" type="image/png" href="/src/assets/icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReadBloom Student Portal - Messages</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@400..700&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app" class="portal-layout">
+    <!-- Sidebar Navigation -->
+    <nav class="portal-sidebar d-flex flex-column p-3">
+      <div class="sidebar-header text-center mb-4 mt-2">
+        <img src="/src/assets/logo.png" alt="ReadBloom Logo" class="sidebar-logo mb-1">
+        <div class="sidebar-portal-tag">STUDENT PORTAL</div>
+      </div>
+      
+      <div class="sidebar-menu flex-grow-1">
+        <button class="nav-item-btn w-100 text-start py-3 px-4 mb-3 border-0" data-page="dashboard">
+          Dashboard
+        </button>
+        <button class="nav-item-btn w-100 text-start py-3 px-4 mb-3 border-0" data-page="journey">
+          My Journey
+        </button>
+        <button class="nav-item-btn w-100 text-start py-3 px-4 mb-3 border-0" data-page="messages">
+          Messages
+        </button>
+        <button class="nav-item-btn w-100 text-start py-3 px-4 mb-3 border-0" data-page="profile">
+          Profile
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="portal-main">
+      
+      <!-- Sub-view 3: Messages (Reading Review) -->
+      <div id="sub-view-messages" class="portal-content-wrapper">
+        <div class="row g-4 align-items-stretch">
+          <!-- Left Column: Reading Review Details -->
+          <div class="col-lg-8">
+            <div class="reading-review-card p-4 shadow-sm bg-white rounded-4 h-100 d-flex flex-column">
+              <!-- Header metadata -->
+              <div class="review-meta d-flex flex-column mb-3 text-start">
+                <div class="meta-item"><span class="font-bold">From:</span> Ma'am Ana</div>
+                <div class="meta-item"><span class="font-bold">Name:</span> <span class="student-fullname-placeholder">Kai Adamson</span></div>
+              </div>
+
+              <h2 class="review-title text-center mb-1">Reading Review</h2>
+              <h3 class="review-subtitle text-center mb-4">The Two Best Friends</h3>
+
+              <!-- Colored Interactive Story Text Box -->
+              <div class="story-text-container p-4 mb-4 rounded-4 shadow-sm bg-light">
+                <p class="story-passage lh-lg fs-5 text-dark" id="story-passage">
+                  <span class="word-group word-jump" data-error="jumped" data-tip="Jumped word: Kai skipped 'Once there were two friends a'">Once there were two friends a</span> 
+                  <span class="word-group word-mispronounce" data-error="mispronounce" data-tip="Mispronounced: Read 'squirrel' as 'skwirl'">squirrel</span> 
+                  and a puppy. They 
+                  <span class="word-group word-repetition" data-error="repetition" data-tip="Repeated twice: 'used to'">used to</span> 
+                  <span class="word-group word-repetition" data-error="repetition" data-tip="Repeated: 'live'">live</span> 
+                  and play together. The squirrel was very sporty and always won the game. The puppy used to feel bad and 
+                  <span class="word-group word-repetition" data-error="repetition" data-tip="Repeated: 'thought'">thought</span> 
+                  that it was of no use. 
+                  <br><br>
+                  One day, it started raining 
+                  <span class="word-group word-repetition" data-error="repetition" data-tip="Repeated: 'heavily'">heavily</span>. 
+                  The squirrel was in 
+                  <span class="word-group word-self-correct" data-error="self-correct" data-tip="Self-corrected: 'high'">high</span> 
+                  <span class="word-group word-self-correct" data-error="self-correct" data-tip="Self-corrected: 'antics'">antics</span> 
+                  but 
+                  <span class="word-group word-self-correct" data-error="self-correct" data-tip="Self-corrected: 'suddenly'">suddenly</span>, 
+                  <span class="word-group word-jump" data-error="jumped" data-tip="Jumped words: Kai skipped 'lost his balance and fell in the rain water.'">lost his balance and fell in the rain water.</span>
+                  <br><br>
+                  He 
+                  <span class="word-group word-mispronounce" data-error="mispronounce" data-tip="Mispronounced: Read 'called' as 'col-ed'">called</span> 
+                  his friend, the puppy for help. The puppy 
+                  <span class="word-group word-mispronounce" data-error="mispronounce" data-tip="Mispronounced: Read 'came' as 'kayme'">came</span> 
+                  to his rescue. The squirrel climbed on its back and 
+                  <span class="word-group word-mispronounce" data-error="mispronounce" data-tip="Mispronounced: Read 'reached' as 'reach-ed'">reached</span> 
+                  a safe place. He thanked his friend for saving his life.
+                </p>
+              </div>
+
+              <!-- Teacher Report Box -->
+              <div class="teacher-report-box mt-auto p-4 border rounded-4 shadow-sm bg-white">
+                <h4 class="report-title mb-4">Teacher Report</h4>
+                <div class="row g-3">
+                  <!-- Card 1: Jumped Words -->
+                  <div class="col-6 col-md-3">
+                    <div class="report-stat-card border-green text-center p-3 rounded-4">
+                      <div class="stat-label text-success text-uppercase font-bold">Jumped Words</div>
+                      <div class="stat-number text-success display-6 fw-bold">2</div>
+                    </div>
+                  </div>
+                  <!-- Card 2: Repetition -->
+                  <div class="col-6 col-md-3">
+                    <div class="report-stat-card border-orange text-center p-3 rounded-4">
+                      <div class="stat-label text-warning text-uppercase font-bold">Repetition</div>
+                      <div class="stat-number text-warning display-6 fw-bold">3</div>
+                    </div>
+                  </div>
+                  <!-- Card 3: Self Correction -->
+                  <div class="col-6 col-md-3">
+                    <div class="report-stat-card border-teal text-center p-3 rounded-4">
+                      <div class="stat-label text-info text-uppercase font-bold">Self Correction</div>
+                      <div class="stat-number text-info display-6 fw-bold">4</div>
+                    </div>
+                  </div>
+                  <!-- Card 4: Mis-pronunciation -->
+                  <div class="col-6 col-md-3">
+                    <div class="report-stat-card border-gold text-center p-3 rounded-4">
+                      <div class="stat-label text-primary text-uppercase font-bold">Mis-pronunciation</div>
+                      <div class="stat-number text-primary display-6 fw-bold">5</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Teacher Feedback -->
+          <div class="col-lg-4">
+            <div class="teacher-feedback-card p-4 shadow-sm bg-white rounded-4 h-100 d-flex flex-column text-start">
+              <h3 class="feedback-title mb-4">Teacher Feedback</h3>
+              
+              <div class="feedback-body-text fs-5 lh-lg mb-5 text-secondary">
+                Great job Kai, You read with expression and understand the story well. Try to slow down a little and pronounce "squirrel" and "together" more clearly. Practice more words that you are not familiar.
+              </div>
+
+              <div class="feedback-signature mt-auto text-end font-bold text-dark fs-5">
+                - Keep reading and keep blooming!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Speech Word Popover Tooltip Box (Global) -->
+  <div id="word-tooltip-box" class="word-tooltip shadow-lg d-none">
+    <div class="tooltip-arrow"></div>
+    <div class="tooltip-body-content p-2 text-center">
+      <div id="tooltip-text" class="font-bold mb-2">Click to hear pronunciation</div>
+      <div class="d-flex justify-content-center gap-2">
+        <button class="btn btn-sm btn-primary py-1 px-2 rounded-pill font-bold" id="btn-speak-word">
+          <i class="bi bi-volume-up-fill"></i> Speak
+        </button>
+        <button class="btn btn-sm btn-outline-secondary py-1 px-2 rounded-pill font-bold" id="btn-close-tooltip">
+          Dismiss
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Messages Script -->
+  <script type="module" src="/src/js/messages.js"></script>
+</body>
+
+</html>
